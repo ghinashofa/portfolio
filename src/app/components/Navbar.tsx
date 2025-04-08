@@ -11,8 +11,8 @@ export default function Navbar() {
     const navigation = [
         { name: "Home", href: "/" },
         { name: "About", href: "/#about" },
-        { name: "Projects", href: "/project" },
-        { name: "Contact", href: "/contact" },
+        { name: "Projects", href: "/pages/projectpages" },
+        { name: "Contact", href: "/#contact" },
     ];
 
     return (
@@ -27,15 +27,16 @@ export default function Navbar() {
                         {navigation.map((item) => (
                             <li key={item.name}>
                                 <Link
-                                    href={item.href}
-                                    className={`relative text-sm transition-all duration-300 ${
-                                        pathname.startsWith(item.href)
-                                            ? "font-semibold after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-black"
-                                            : "font-light hover:after:w-full after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300"
-                                    }`}
-                                >
-                                    {item.name}
-                                </Link>
+    href={item.href}
+    className={`relative text-sm transition-all duration-300 ${
+        pathname === item.href
+            ? "font-semibold after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-black"
+            : "font-light hover:after:w-full after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300"
+    }`}
+>
+    {item.name}
+</Link>
+
                             </li>
                         ))}
                     </ul>

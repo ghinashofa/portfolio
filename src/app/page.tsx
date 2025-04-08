@@ -5,14 +5,16 @@ import Navbar from "./components/Navbar";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 const options = [
-    { title: "UI/UX DESIGN", link: "/uiux" },
-    { title: "FRONT-END WEB DEVELOPMENT", link: "/frontend" },
-    { title: "GRAPHIC DESIGN", link: "/graphic" },
+    { title: "UI/UX DESIGN", link: "/pages/projectpages" },
+    { title: "FRONT-END WEB DEVELOPMENT", link: "/pages/projectpages" },
+    { title: "GRAPHIC DESIGN", link: "/pages/projectpages" },
 ];
 import Link from "next/link";
 import Button from "./components/Button";
 import { MdArrowOutward } from "react-icons/md";
 import ProjectCard from "./components/ProjectCard";
+import Footer from "./components/Footer";
+import { projects } from "@/data/project";
 
 export default function Home() {
     const ref = useRef(null);
@@ -21,7 +23,7 @@ export default function Home() {
         {
             title: "PataLand",
             description:
-                "A web-based tourism platform that helps users explore and plan their next adventure easily.",
+                "Redesigned the Pataland’s website, a metaverse platform offering immersive 3D virtual adventures. The redesign focused on enhancing the user experience by improving 3D animations and prototyping animations for smoother transitions and more dynamic interactions.",
             imageSrc: "/images/pataland-mobile.png",
             tag: "UI/UX Design",
         },
@@ -237,9 +239,11 @@ export default function Home() {
                                     ease: "easeOut",
                                 }}
                             >
-                                <Button variant="default" size="responsive">
-                                    See All Projects
-                                </Button>
+                                <Link href="/pages/projectpages">
+                                    <Button variant="default" size="responsive">
+                                        See All Projects
+                                    </Button>
+                                </Link>
                             </motion.div>
                         </motion.div>
 
@@ -495,6 +499,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <Footer />
         </>
     );
 }

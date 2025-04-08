@@ -9,6 +9,8 @@ const buttonVariants = cva(
             variant: {
                 default:
                     "px-6 py-2 rounded-full bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] text-white transition-all duration-300 hover:bg-[#E1E1E1] hover:text-black hover:shadow-lg hover:bg-none",
+                light:
+                    "px-6 py-4 rounded-full bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] text-white transition-all duration-300 hover:bg-black hover:text-white hover:shadow-lg hover:bg-none",
                 outline:
                     "rounded-full border border-black text-black hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:text-white hover:border-none hover:shadow-lg",
                 ghost: "text-black hover:bg-gray-100",

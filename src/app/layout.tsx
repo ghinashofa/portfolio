@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LenisScroller from "./LenisScroller";
 
 export const metadata: Metadata = {
   title: "Ghina's Portfolio",
@@ -21,6 +22,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-inter bg-black">
+      <LenisScroller />
         {children}
       </body>
     </html>

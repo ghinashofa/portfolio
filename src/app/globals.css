@@ -3,7 +3,22 @@
 
 
 
+@keyframes scrollGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
 
+.bg-animated-grid {
+  background-image: 
+    linear-gradient(to right, #d4d4d4 1px, transparent 1px),
+    linear-gradient(to bottom, #d4d4d4 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: scrollGrid 10s linear infinite;
+}
 @layer base {
     :root {
       --font-sans: 'Inter', sans-serif;

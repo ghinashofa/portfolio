@@ -3,25 +3,43 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "./Button";
+import { FaGithub, FaLinkedinIn, FaDribbble } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const HeroSection: React.FC = () => {
+    const socialLinks = [
+        {
+            href: "mailto:ghinashofa2002@gmail.com",
+            icon: <MdEmail size={24} />,
+        },
+        {
+            href: "https://www.linkedin.com/in/ghina-shofa-raudhatul-jannah/",
+            icon: <FaLinkedinIn size={24} />,
+        },
+        { href: "https://github.com/ghinashofa", icon: <FaGithub size={24} /> },
+        {
+            href: "https://dribbble.com/ghinaashf",
+            icon: <FaDribbble size={24} />,
+        },
+    ];
     return (
         <section className="relative w-full min-h-screen flex flex-col justify-center md:justify-end items-center md:items-end bg-[#E1E1E1] px-6 md:px-28">
             {/* Animating "GHINA" Text from Top */}
             <motion.h2
-                initial={{ opacity: 0, y: -100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
+                animate={{ y: [0, 20, 0] }} // Gerak naik-turun
+                transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "easeInOut",
+                }}
                 className="absolute font-alfa md:leading-[1.24] text-neutral-800 left-1/2 -translate-x-1/2  md:top-24 text-7xl md:text-[160px] lg:text-[250px] hidden md:block"
-                whileInView={{ opacity: 1, y: [30, 0], scale: [0.9, 1] }}
-                viewport={{ once: false, amount: 0.2 }}
             >
                 GHINA
             </motion.h2>
 
             {/* Main Content */}
             <div className="relative z-10 flex flex-col md:flex-row items-end justify-center w-full max-w-full lg:gap-32 mt-12 md:mt-0">
-                
                 {/* Desktop - Left: Description Animating from Left */}
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -76,30 +94,17 @@ const HeroSection: React.FC = () => {
                     <p>Graphic Designer</p>
                     <p>Frontend Developer</p>
                     <div className="flex justify-end mt-4 space-x-4">
-                        <Image
-                            src="/images/icon-gmail.svg"
-                            alt="Gmail"
-                            width={40}
-                            height={40}
-                        />
-                        <Image
-                            src="/images/icon-linkedin.svg"
-                            alt="LinkedIn"
-                            width={40}
-                            height={40}
-                        />
-                        <Image
-                            src="/images/icon-github.svg"
-                            alt="GitHub"
-                            width={40}
-                            height={40}
-                        />
-                        <Image
-                            src="/images/icon-dribbble.svg"
-                            alt="Dribbble"
-                            width={40}
-                            height={40}
-                        />
+                        {socialLinks.map((link, index) => (
+                            <a
+                                key={index}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 flex items-center justify-center rounded-full border border-black text-black transition-all relative hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:border-none hover:shadow-md hover:text-white"
+                            >
+                                {link.icon}
+                            </a>
+                        ))}
                     </div>
                 </motion.div>
 
