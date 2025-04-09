@@ -4,19 +4,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Button from "./Button";
+// import { projects } from "@/data/project";
+import { tagColors } from "@/data/project";
 
 interface ProjectCardProps {
     title: string;
     description: string;
     imageSrc: string;
-    tag: "Frontend" | "UI/UX Design" | "Graphic Design";
-}
+    tag: string;
+  }
 
-const tagColors: { [key: string]: string } = {
-    Frontend: "from-blue-500 to-indigo-500",
-    "UI/UX Design": "from-purple-500 to-purple-700",
-    "Graphic Design": "from-orange-500 to-orange-700",
-};
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
     title,

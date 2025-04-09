@@ -14,7 +14,6 @@ import Button from "./components/Button";
 import { MdArrowOutward } from "react-icons/md";
 import ProjectCard from "./components/ProjectCard";
 import Footer from "./components/Footer";
-import { projects } from "@/data/project";
 
 export default function Home() {
     const ref = useRef(null);
@@ -239,10 +238,11 @@ export default function Home() {
                                     ease: "easeOut",
                                 }}
                             >
-                                <Link href="/pages/projectpages">
-                                    <Button variant="default" size="responsive">
-                                        See All Projects
-                                    </Button>
+                                <Link href={"/pages/projectpages"}>
+                                <Button variant="default" size="responsive">
+                                    See All Projects
+                                </Button>
+                                
                                 </Link>
                             </motion.div>
                         </motion.div>

@@ -7,7 +7,7 @@ import { FaGlobe } from "react-icons/fa";
 import Button from "./Button";
 import { useForm, ValidationError } from "@formspree/react";
 
-export default function Footer() {
+export default function FooterBlack() {
     const marqueeRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -17,14 +17,14 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="bg-[#E1E1E1] shadow-lg z-50 text-black pt-16 pb-4">
-            <div className="w-full mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-20 px-8 lg:px-16 text-black py-12">
+        <footer className="bg-black text-[#b8b6b6] pt-16 pb-4 shadow-md z-10 ">
+            <div className="w-full mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-20 px-8 lg:px-16 text-white py-12">
                 <div>
-                    <h2 className="text-black font-alfa text-3xl tracking-wide">
+                    <h2 className="text-[#b8b6b6] font-alfa text-3xl tracking-wider">
                         CONTACT
                     </h2>
-                    <hr className="w-full border-zinc-800 border-2 mt-2 mb-4" />
-                    <p className="text-lg">
+                    <hr className="w-full border-zinc-300 border-2 mt-2 mb-4" />
+                    <p className="text-lg text-[#b8b6b6]">
                         Looking to collaborate or have any questions? Feel free
                         to contact me.
                     </p>
@@ -61,21 +61,21 @@ export default function Footer() {
                                 name="name"
                                 placeholder="Full Name"
                                 required
-                                className="border border-zinc-400 p-3 text-black rounded-md w-1/2 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900"
+                                className="border border-zinc-400 p-3 text-[#b8b6b6] rounded-md w-1/2 focus:border-zinc-300 focus:ring-1 focus:ring-zinc-900"
                             />
                             <input
                                 type="email"
                                 name="email"
                                 placeholder="name@email.com"
                                 required
-                                className="border border-zinc-400 p-3 text-black rounded-md w-1/2 focus:border-zinc-800 focus:ring-1 focus:ring-zinc-900"
+                                className="border border-zinc-400 p-3 text-[#b8b6b6] rounded-md w-1/2 focus:border-zinc-300 focus:ring-1 focus:ring-zinc-900"
                             />
                         </div>
                         <textarea
                             name="message"
                             placeholder="Message..."
                             required
-                            className="border border-zinc-400 p-3 text-black rounded-md h-24 focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900"
+                            className="border border-zinc-400 p-3 text-[#b8b6b6] rounded-md h-24 focus:border-zinc-300 focus:ring-1 focus:ring-zinc-900"
                         ></textarea>
 
                         <Button
@@ -90,10 +90,10 @@ export default function Footer() {
             </div>
 
             {/* Marquee */}
-            <div className="mt-16 overflow-hidden whitespace-nowrap border-t border-gray-700 pt-6">
+            <div className="mt-16 overflow-hidden whitespace-nowrap border-t border-gray-300 pt-6">
                 <div
                     ref={marqueeRef}
-                    className="flex items-center space-x-8 animate-marquee text-6xl font-alfa tracking-wide font-bold text-zinc-800"
+                    className="flex items-center space-x-8 animate-marquee text-6xl font-alfa tracking-widest font-bold text-[#e3f054]"
                 >
                     {[
                         "PROJECTS",
@@ -116,7 +116,7 @@ export default function Footer() {
                     ))}
                 </div>
             </div>
-            <p className="text-black text-center text-sm mt-4 md:mt-7">
+            <p className="text-[#b8b6b6] text-center text-sm mt-4 md:mt-7">
                 ©2025 <span className="">Ghina Shofa.</span> All Rights
                 Reserved.
             </p>
