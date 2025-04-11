@@ -1,7 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+    motion,
+    AnimatePresence,
+    useScroll,
+    useTransform,
+    useMotionValue,
+} from "framer-motion";
 import { FaFigma, FaReact, FaBlender } from "react-icons/fa";
 import { SiFramer, SiGoogleplay } from "react-icons/si";
 import { BsArrowRight } from "react-icons/bs";
@@ -10,94 +16,6 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { CgLivePhoto } from "react-icons/cg";
 import { projects } from "@/data/project";
-
-// const allProjects = {
-//     "UI/UX Design": [
-//         {
-//             date: "February 2025",
-//             title: "Loan Management Dashboard",
-//             description:
-//                 "A web-based admin dashboard designed to digitize the manual loan recording process. This system enables efficient loan and payment data management, reduces errors, and improves operational speed.",
-//             image: "/images/dantal-dashboard.png",
-//             tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//         {
-//             date: "February 2025",
-//             title: "Dashboard Mudik PLN",
-//             description:
-//                 "Redesigned the Pataland’s website, a metaverse platform offering immersive 3D virtual adventures. The redesign focused on enhancing the user experience by improving 3D animations and prototyping animations for smoother transitions and more dynamic interactions.",
-//             image: "/images/mudik-pln-dashboard.png",
-//             tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//         {
-//             date: "June 2024",
-//             title: "PATALAND",
-//             description:
-//                 "Redesigned the Pataland’s website, a metaverse platform offering immersive 3D virtual adventures. The redesign focused on enhancing the user experience by improving 3D animations and prototyping animations for smoother transitions and more dynamic interactions.",
-//             image: "/images/pataland-dekstop.png",
-//             tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//         {
-//             date: "June 2024",
-//             title: "SPACIFY",
-//             description:
-//                 "Donorind as a mobile app will provide blood donation information to raise awareness, offer real-time updates, and make donating easier for everyone.",
-//             image: "/images/spacify.png",
-//             tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//         {
-//             date: "June 2024",
-//             title: "SPEAKERSEEKER",
-//             description:
-//                 "Donorind as a mobile app will provide blood donation information to raise awareness, offer real-time updates, and make donating easier for everyone.",
-//             image: "/images/speakerseeker.png",
-//             tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//     ],
-//     "Web Development": [
-//         {
-//             date: "June 2024",
-//             title: "Mudik Asyik Bersama PLN 2025",
-//             description:
-//                 "Redesigned the Pataland’s website, a metaverse platform offering immersive 3D virtual adventures. The redesign focused on enhancing the user experience by improving 3D animations and prototyping animations for smoother transitions and more dynamic interactions.",
-//             image: "/images/MUDIK-PLN.png",
-//             tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//         {
-//             date: "June 2024",
-//             title: "BACAIN APP",
-//             description:
-//                 "Consure, a mobile app, provides one-on-one consultations on careers, competitions, and scholarships, guided by experts to help students overcome these obstacles.",
-//             image: "/images/bacain.png",
-//             tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//         {
-//             date: "June 2024",
-//             title: "BUDGETBUDDY",
-//             description:
-//                 "Consure, a mobile app, provides one-on-one consultations on careers, competitions, and scholarships, guided by experts to help students overcome these obstacles.",
-//             image: "/images/budgetbuddy.png",
-//             tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
-//             link: "#",
-//             liveDemo: "https://live-demo-loan-dashboard.com",
-//         },
-//     ],
-//     "Graphic Design": [],
-// };
 
 const tabs = ["UI/UX Design", "Web Development", "Graphic Design"];
 const projectsPerPage = 4;
@@ -119,11 +37,19 @@ export default function ProjectPages() {
         setCurrentPage(1); // reset ke page 1 saat tab berganti
     }, [activeTab]);
 
+    // Scroll Animation Hook
+    const { scrollYProgress } = useScroll();
+    const yTranslate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const scaleEffect = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+
     return (
         <section>
-            <div className="bg-[#E1E1E1] px-6 md:px-28 py-12 bg-animated-grid min-h-screen">
+            <div className="bg-[#E1E1E1] px-6 md:px-28 pt-10 bg-animated-grid min-h-screen">
                 <Navbar />
-                <div className="mt-24">
+                <motion.div
+                    className="mt-24"
+                    style={{ y: yTranslate, scale: scaleEffect }}
+                >
                     <h1 className="text-4xl md:text-5xl font-alfa text-center mb-8">
                         PROJECTS
                     </h1>
@@ -149,7 +75,7 @@ export default function ProjectPages() {
                     </div>
 
                     {/* Projects */}
-                    <div className="flex flex-col gap-24 md:gap-32 mt-16">
+                    <div className="flex flex-col gap-26 md:gap-32 mt-16">
                         <AnimatePresence mode="wait">
                             {paginatedProjects.length > 0 ? (
                                 paginatedProjects.map((project, index) => (
@@ -170,7 +96,7 @@ export default function ProjectPages() {
                                             duration: 0.8,
                                             ease: "easeInOut",
                                         }}
-                                        className={`flex flex-col md:flex-row items-center gap-12 ${
+                                        className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
                                             index % 2 === 1
                                                 ? "md:flex-row-reverse"
                                                 : ""
@@ -224,14 +150,32 @@ export default function ProjectPages() {
                                                 )}
                                             </div>
                                             <div className="flex flex-rows gap-4">
-                                                <Link
-                                                    href={`/projects/${project.slug}`}
-                                                    className="inline-flex items-center gap-2 text-sm font-medium text-white border bg-black border-black rounded-full px-5 py-2 hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:text-white hover:border-none hover:shadow-lg transition-all"
-                                                >
-                                                    See project <BsArrowRight />
-                                                </Link>
+                                                {project.externalLink ? (
+                                                    <a
+                                                        href={
+                                                            project.externalLink
+                                                        }
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-2 text-sm font-medium text-white border bg-black border-black rounded-full px-5 py-2 hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:text-white hover:border-none hover:shadow-lg transition-all"
+                                                    >
+                                                        See Project{" "}
+                                                        <BsArrowRight />
+                                                    </a>
+                                                ) : (
+                                                    <Link
+                                                        href={`/projects/${project.slug}`}
+                                                        className="inline-flex items-center gap-2 text-sm font-medium text-white border bg-black border-black rounded-full px-5 py-2 hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:text-white hover:border-none hover:shadow-lg transition-all"
+                                                    >
+                                                        See Project{" "}
+                                                        <BsArrowRight />
+                                                    </Link>
+                                                )}
+
                                                 <Link
                                                     href={project.liveDemo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="inline-flex items-center gap-2 text-sm font-medium text-black border border-black rounded-full px-5 py-2 hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:text-white hover:border-none hover:shadow-lg transition-all"
                                                 >
                                                     <CgLivePhoto /> Live Demo
@@ -254,7 +198,7 @@ export default function ProjectPages() {
 
                     {/* Pagination controls */}
                     {totalPages > 1 && (
-                        <div className="mt-12 flex justify-center items-center gap-4">
+                        <div className="mt-20 flex justify-center items-center gap-4">
                             <button
                                 disabled={currentPage === 1}
                                 onClick={() =>
@@ -303,7 +247,7 @@ export default function ProjectPages() {
                             </button>
                         </div>
                     )}
-                </div>
+                </motion.div>
             </div>
             <Footer />
         </section>

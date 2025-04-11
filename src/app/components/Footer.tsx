@@ -18,7 +18,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-[#E1E1E1] shadow-lg z-50 text-black pt-16 pb-4">
-            <div className="w-full mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-20 px-8 lg:px-16 text-black py-12">
+            <div className="w-full mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-20 px-8 lg:px-12 text-black py-4 md:py-12">
                 <div>
                     <h2 className="text-black font-alfa text-3xl tracking-wide">
                         CONTACT

@@ -147,7 +147,7 @@ export default function Home() {
                         whileInView={{ x: [0, -20, 20, 0] }} // Back-and-forth movement on scroll
                         viewport={{ once: false, amount: 0.2 }}
                     >
-                        I'm a UI/UX designer with over two years of experience
+                        I'm a UI/UX designer with over three years of experience
                         in web and mobile design, currently building my Frontend
                         Development skills. I’m passionate about creating
                         user-friendly designs that blend creativity with
