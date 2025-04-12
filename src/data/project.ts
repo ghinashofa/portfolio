@@ -50,7 +50,7 @@ export const projects: ProjectCategory = {
             role: "In this project, I worked as a UI/UX Designer. My responsibilities include:",
             image: "/images/mudik-pln-dashboard.png",
             image1: "/images/mudik-pln-dashboard-2.png",
-            tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg"],
+            tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg", "/images/icon-notion-2.svg"],
             liveDemo: "https://live-demo-loan-dashboard.com",
             highlights: [
                 {
@@ -316,7 +316,7 @@ export const projects: ProjectCategory = {
             role: "In this project, I worked as a UI/UX Designer. My responsibilities include:",
             image: "/images/donorind.png",
             image1: "/images/dantal-dashboard.png",
-            tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg"],
+            tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg", "/images/icon-maze-2.svg"],
             liveDemo: "https://www.figma.com/proto/BxnvAFGfnwx10SaDXINd7o/Donor?page-id=1%3A3&node-id=453-3889&viewport=1237%2C565%2C0.23&t=3dVF9wbo4dQZDhEO-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=82%3A1275&show-proto-sidebar=1",
             externalLink: "https://gaudy-gargoyle-734.notion.site/Donorind-App-1265f3f156db80e592c1e9bd9685c3e8?pvs=4",
             highlights: [
@@ -394,6 +394,82 @@ export const projects: ProjectCategory = {
             image1: "/images/dantal-dashboard.png",
             tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg"],
             liveDemo: "https://www.figma.com/proto/7t1W50ziKRqXmTyJm1SUBJ/Speakerseeker?page-id=0%3A1&node-id=51-9&viewport=319%2C311%2C0.05&t=YvnnSuDfL2O6OcBG-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=51%3A9",
+            highlights: [
+                {
+                    color: "#B16CEA",
+                    text: "Doing user research and analyzing the manual loan recording process with product manager.",
+                },
+                {
+                    color: "#D366B2",
+                    text: "Designing the interface of the web admin panel using Figma.",
+                },
+                {
+                    color: "#F5607A",
+                    text: "Making interactive prototypes to test the user flow.",
+                },
+                {
+                    color: "#FF9C50",
+                    text: "Working together with the client to make sure the design matches their needs.",
+                },
+                {
+                    color: "#FFA74B",
+                    text: "Testing and improving the system based on feedback.",
+                },
+            ],
+        },
+        {
+            slug: "spacify",
+            tag: "UI/UX Design",
+            date: "November 2022",
+            title: "Spacify",
+            description:
+                "Kaneela is a mobile app that allows users to easily place cake orders online, offering a seamless and convenient way to browse, select, and purchase cakes from Kaneela Shop, without the need to visit the store in person.",
+            projectDesc:
+                "This project is a digital solution designed to replace the traditional manual loan recording process that relied on paper. The web-based admin panel system helps administrators record loan and payment data more efficiently and accurately. With this system, admins can manage customer and transaction data in real-time, reduce errors, and improve the speed and effectiveness of operations.",
+            role: "In this project, I worked as a UI/UX Designer. My responsibilities include:",
+            image: "/images/kaneela.png",
+            image1: "/images/spacify.png",
+            tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg", "/images/icon-maze-2.svg"],
+            liveDemo: "https://www.figma.com/proto/8J41swOL34uVlgX2HGVyV1/Challenge-CH3---CH4?page-id=29%3A2051&node-id=82-1941&viewport=12%2C78%2C0.09&t=RPDAhQnRkq5VrXmJ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=82%3A1941&show-proto-sidebar=1",
+            externalLink: "https://gaudy-gargoyle-734.notion.site/Kaneela-Shop-App-264c60a1543c44c9a6eb95953a384cd2?pvs=4",
+            highlights: [
+                {
+                    color: "#B16CEA",
+                    text: "Doing user research and analyzing the manual loan recording process with product manager.",
+                },
+                {
+                    color: "#D366B2",
+                    text: "Designing the interface of the web admin panel using Figma.",
+                },
+                {
+                    color: "#F5607A",
+                    text: "Making interactive prototypes to test the user flow.",
+                },
+                {
+                    color: "#FF9C50",
+                    text: "Working together with the client to make sure the design matches their needs.",
+                },
+                {
+                    color: "#FFA74B",
+                    text: "Testing and improving the system based on feedback.",
+                },
+            ],
+        },
+        {
+            slug: "kaneela",
+            tag: "UI/UX Design",
+            date: "May 2023",
+            title: "Kaneela: Cake Ordering App for Seamless Online Orders",
+            description:
+                "Kaneela is a mobile app that allows users to easily place cake orders online, offering a seamless and convenient way to browse, select, and purchase cakes from Kaneela Shop, without the need to visit the store in person.",
+            projectDesc:
+                "This project is a digital solution designed to replace the traditional manual loan recording process that relied on paper. The web-based admin panel system helps administrators record loan and payment data more efficiently and accurately. With this system, admins can manage customer and transaction data in real-time, reduce errors, and improve the speed and effectiveness of operations.",
+            role: "In this project, I worked as a UI/UX Designer. My responsibilities include:",
+            image: "/images/kaneela.png",
+            image1: "/images/dantal-dashboard.png",
+            tools: ["/images/icon-figma-2.svg", "/images/icon-whimsical-2.svg", "/images/icon-maze-2.svg"],
+            liveDemo: "https://www.figma.com/proto/8J41swOL34uVlgX2HGVyV1/Challenge-CH3---CH4?page-id=29%3A2051&node-id=82-1941&viewport=12%2C78%2C0.09&t=RPDAhQnRkq5VrXmJ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=82%3A1941&show-proto-sidebar=1",
+            externalLink: "https://gaudy-gargoyle-734.notion.site/Kaneela-Shop-App-264c60a1543c44c9a6eb95953a384cd2?pvs=4",
             highlights: [
                 {
                     color: "#B16CEA",
