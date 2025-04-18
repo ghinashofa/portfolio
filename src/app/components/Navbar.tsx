@@ -20,7 +20,11 @@ export default function Navbar() {
             <nav className="fixed top-0 left-0 w-full bg-[#E1E1E1] z-50 shadow-md">
                 <div className="container mx-auto flex items-center justify-between h-[80px] px-6 lg:px-8 max-w-screen-xl">
                     {/* Logo / Brand */}
-                    <h2 className="text-lg font-semibold">Portfolio</h2>
+                    <Link href="/">
+                        <h2 className="text-lg font-semibold cursor-pointer ">
+                            Portfolio
+                        </h2>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <ul className="hidden lg:flex space-x-8 font-light">

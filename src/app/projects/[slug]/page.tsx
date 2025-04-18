@@ -178,30 +178,32 @@ export default function ProjectDetailPage({
                     </div>
 
                     {/* IMAGES */}
-                    <div
-                        className="relative group w-full rounded-xl my-6 mb-10 shadow-md overflow-hidden cursor-pointer"
-                        onClick={() => {
-                            setModalImage(project.image1);
-                            setIsModalOpen(true);
-                        }}
-                    >
-                        <Image
-                            src={project.image1}
-                            alt={project.title}
-                            width={700}
-                            height={400}
-                            className="object-cover w-full h-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
-                        />
+                    {project.image1 && (
+                        <div
+                            className="relative group w-full rounded-xl my-6 mb-10 shadow-md overflow-hidden cursor-pointer"
+                            onClick={() => {
+                                setModalImage(project.image1 as string); // bisa juga pakai default string
+                                setIsModalOpen(true);
+                            }}
+                        >
+                            <Image
+                                src={project.image1}
+                                alt={project.title}
+                                width={700}
+                                height={400}
+                                className="object-cover w-full h-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
+                            />
 
-                        {/* Overlay */}
-                        <div className="absolute inset-0 bg-black/60 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
-                            <div className="w-28 h-28 rounded-full bg-white bg-opacity-90 flex items-center justify-center text-black font-semibold text-sm">
-                                View Image
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-black/60 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <div className="w-28 h-28 rounded-full bg-white bg-opacity-90 flex items-center justify-center text-black font-semibold text-sm">
+                                    View Image
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 mt-4">
                         <Link
                             href={project.liveDemo}
                             target="_blank"

@@ -83,10 +83,16 @@ export default function ProjectPages() {
                                         key={project.title}
                                         initial={{
                                             opacity: 0,
+                                            x: index % 2 === 0 ? -100 : 100, // masuk dari kiri kalau index genap (0,2), kanan kalau ganjil (1,3)
                                             y: 60,
                                             scale: 0.95,
                                         }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        whileInView={{
+                                            opacity: 1,
+                                            x: 0,
+                                            y: 0,
+                                            scale: 1,
+                                        }}
                                         exit={{
                                             opacity: 0,
                                             y: -60,
@@ -96,6 +102,7 @@ export default function ProjectPages() {
                                             duration: 0.8,
                                             ease: "easeInOut",
                                         }}
+                                        viewport={{ once: true }}
                                         className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${
                                             index % 2 === 1
                                                 ? "md:flex-row-reverse"

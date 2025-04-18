@@ -14,9 +14,19 @@ import Button from "./components/Button";
 import { MdArrowOutward } from "react-icons/md";
 import ProjectCard from "./components/ProjectCard";
 import Footer from "./components/Footer";
+import { projects as projectData } from "@/data/project";
 
 export default function Home() {
     const ref = useRef(null);
+    const allProjects = Object.values(projectData).flat();
+    const selectedProjects = allProjects.filter(
+        (project) =>
+          project.slug === "dashboard-mudik-pln" ||
+          project.slug === "pataland" ||
+          project.slug === "bacain-app" ||
+          project.slug === "loan-management-dashboard"
+      );
+      
     const isInView = useInView(ref, { once: true, margin: "-50px" });
     const projects = [
         {
@@ -29,7 +39,7 @@ export default function Home() {
         {
             title: "Bacain",
             description:
-                "Bacain is a web-based news platform that delivers the latest stories across categories like Business, Food, and Fashion. With a clean interface and intuitive navigation, it ensures a seamless browsing experience.   This project strengthened my skills in building a well-structured, responsive web app with efficient categorization, focusing on usability and user experience.",
+                "Bacain is a web-based news platform that delivers the latest stories across categories like Business, Food, and Fashion. With a clean interface and intuitive navigation, it ensures a seamless browsing experience. This project strengthened my skills in building a well-structured, responsive web app with efficient categorization, focusing on usability and user experience.",
             imageSrc: "/images/bacain.png",
             tag: "Frontend",
         },
@@ -239,10 +249,9 @@ export default function Home() {
                                 }}
                             >
                                 <Link href={"/pages/projectpages"}>
-                                <Button variant="default" size="responsive">
-                                    See All Projects
-                                </Button>
-                                
+                                    <Button variant="default" size="responsive">
+                                        See All Projects
+                                    </Button>
                                 </Link>
                             </motion.div>
                         </motion.div>
@@ -302,42 +311,43 @@ export default function Home() {
                     </span>
                 </motion.h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:mt-6">
-                        {projects.map((project, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{
-                                    opacity: 0,
-                                    x: index % 2 === 0 ? -100 : 100, // Muncul dari kiri-kanan bergantian
-                                }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: false, amount: 0.2 }} // Animasi berjalan setiap kali discroll masuk viewport
-                                transition={{
-                                    duration: 0.8,
-                                    delay: index * 0.2,
-                                    ease: "easeOut",
-                                }}
-                            >
-                                <ProjectCard
-                                    title={project.title}
-                                    description={project.description}
-                                    imageSrc={project.imageSrc}
-                                    tag={
-                                        [
-                                            "Frontend",
-                                            "UI/UX Design",
-                                            "Graphic Design",
-                                        ].includes(project.tag)
-                                            ? (project.tag as
-                                                  | "Frontend"
-                                                  | "UI/UX Design"
-                                                  | "Graphic Design")
-                                            : "Frontend"
-                                    }
-                                />
-                            </motion.div>
-                        ))}
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 md:mt-6">
+                    {selectedProjects.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{
+                                opacity: 0,
+                                x: index % 2 === 0 ? -100 : 100,
+                            }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: false, amount: 0.2 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: index * 0.2,
+                                ease: "easeOut",
+                            }}
+                        >
+                            <ProjectCard
+                                title={project.title}
+                                description={project.description}
+                                imageSrc={project.image}
+                                tag={
+                                    [
+                                        "Frontend",
+                                        "UI/UX Design",
+                                        "Graphic Design",
+                                    ].includes(project.tag)
+                                        ? (project.tag as
+                                              | "Frontend"
+                                              | "UI/UX Design"
+                                              | "Graphic Design")
+                                        : "Frontend"
+                                }
+                                slug={project.slug}
+                            />
+                        </motion.div>
+                    ))}
+                </div>
             </section>
 
             {/* My Skills Section */}

@@ -40,11 +40,11 @@ export default function Footer() {
                     <p className="mt-2 text-lg flex items-center gap-2">
                         <FaGlobe className="w-5 h-5" />:
                         <Link
-                            href="https://yourwebsite.com"
+                            href="https://ghinashofa.vercel.app/"
                             target="_blank"
                             className="hover:bg-gradient-to-r from-purple-500 to-red-500 hover:bg-clip-text hover:text-transparent transition-colors"
                         >
-                            www.yourwebsite.com
+                            ghinashofa.vercel.app
                         </Link>
                     </p>
                     <p className="mt-4 text-lg">Bandung, Indonesia</p>
