@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
                     viewport={{ once: false, amount: 0.2 }}
                 >
                     <p className="text-lg font-semibold">
-                        Hello! I'm Ghina{" "}
+                        Hello! I&apos;m Ghina{" "}
                         <span className="animate-wave">👋</span>
                     </p>
                     <p className="text-gray-600 mt-2">
@@ -186,7 +186,7 @@ const HeroSection: React.FC = () => {
                         className="mt-6 px-2 z-10"
                     >
                         <p className="text-lg font-semibold">
-                            Hello! I'm Ghina{" "}
+                            Hello! I&apos;m Ghina{" "}
                             <span className="animate-wave">👋</span>
                         </p>
                         <p className="text-gray-600 mt-2">

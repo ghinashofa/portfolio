@@ -13,6 +13,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { CgLivePhoto } from "react-icons/cg";
 import { projects } from "@/data/project";
+import Image from "next/image";
 
 const tabs = ["UI/UX Design", "Web Development", "Graphic Design"];
 const projectsPerPage = 4;
@@ -114,7 +115,7 @@ export default function ProjectPages() {
                                                 stiffness: 200,
                                             }}
                                         >
-                                            <img
+                                            <Image
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="rounded-xl w-full h-full object-cover shadow-md"
@@ -144,7 +145,7 @@ export default function ProjectPages() {
                                             <div className="flex flex-wrap gap-3 mb-6">
                                                 {project.tools.map(
                                                     (icon, i) => (
-                                                        <img
+                                                        <Image
                                                             key={i}
                                                             src={icon}
                                                             alt={`tool-${i}`}

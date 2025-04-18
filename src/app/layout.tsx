@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LenisScroller from "./LenisScroller";
+import { Inter } from "next/font/google";
+import { Alfa_Slab_One } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter", // opsional kalau mau pakai CSS variable
+});
+
+const alfaSlabOne = Alfa_Slab_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-alfa", // opsional
+});
 
 export const metadata: Metadata = {
   title: "Ghina's Portfolio",
@@ -13,16 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        {/* Use link tag to import fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${alfaSlabOne.variable}`}>
       <body className="font-inter bg-black">
-      <LenisScroller />
+        <LenisScroller />
         {children}
       </body>
     </html>

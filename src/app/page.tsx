@@ -126,18 +126,18 @@ export default function Home() {
                         whileInView={{ x: [0, -20, 20, 0] }} // Back-and-forth movement on scroll
                         viewport={{ once: false, amount: 0.2 }}
                     >
-                        I'm a UI/UX designer with over three years of experience
+                        I&apos;m a UI/UX designer with over three years of experience
                         in web and mobile design, currently building my Frontend
-                        Development skills. I’m passionate about creating
+                        Development skills. I&apos;m passionate about creating
                         user-friendly designs that blend creativity with
                         functionality. My goal is to design experiences that
-                        inspire and make an impact. Let’s connect with me! ✨
+                        inspire and make an impact. Let&apos;s connect with me! ✨
                     </motion.p>
 
                     <div className="flex flex-col md:flex-row gap-8">
                         {/* Animated Stat Items */}
                         {[
-                            { value: "15+", label: "Project's Done" },
+                            { value: "15+", label: "Project&apos;s Done" },
                             { value: "3+", label: "Years Of Experience" },
                             { value: "5", label: "Awards" },
                             { value: "5+", label: "Clients Served" },

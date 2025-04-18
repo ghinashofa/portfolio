@@ -13,20 +13,14 @@ import { SiTarget } from "react-icons/si";
 import { useState } from "react";
 import { use } from "react";
 
-type Params = {
-    params: {
-        slug: string;
-    };
-};
-
 export default function ProjectDetailPage({
     params,
 }: {
     params: Promise<{ slug: string }>;
 }) {
-    const { slug } = use(params); // ✅ unwrap param
+    const { slug } = use(params); 
 
-    const projectList = Object.values(projects).flat(); // gabung semua kategori
+    const projectList = Object.values(projects).flat(); 
     const project = projectList.find((proj) => proj.slug === slug);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -232,7 +226,7 @@ export default function ProjectDetailPage({
                             &times;
                         </button>
                         <div className="overflow-auto max-h-[80vh]">
-                            <img
+                            <Image
                                 src={modalImage}
                                 alt="Zoomed Project"
                                 className="w-full h-auto object-contain"
