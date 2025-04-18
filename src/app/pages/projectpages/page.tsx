@@ -151,8 +151,8 @@ export default function ProjectPages() {
                                                             key={i}
                                                             src={icon}
                                                             alt={`tool-${i}`}
-                                                            width={10}
-                                                            height={10}
+                                                            width={35}
+                                                            height={35}
                                                         />
                                                     )
                                                 )}
