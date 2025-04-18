@@ -2,7 +2,7 @@
 import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 const options = [
     { title: "UI/UX DESIGN", link: "/pages/projectpages" },
@@ -27,37 +27,6 @@ export default function Home() {
           project.slug === "loan-management-dashboard"
       );
       
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
-    const projects = [
-        {
-            title: "PataLand",
-            description:
-                "Redesigned the Pataland’s website, a metaverse platform offering immersive 3D virtual adventures. The redesign focused on enhancing the user experience by improving 3D animations and prototyping animations for smoother transitions and more dynamic interactions.",
-            imageSrc: "/images/pataland-mobile.png",
-            tag: "UI/UX Design",
-        },
-        {
-            title: "Bacain",
-            description:
-                "Bacain is a web-based news platform that delivers the latest stories across categories like Business, Food, and Fashion. With a clean interface and intuitive navigation, it ensures a seamless browsing experience. This project strengthened my skills in building a well-structured, responsive web app with efficient categorization, focusing on usability and user experience.",
-            imageSrc: "/images/bacain.png",
-            tag: "Frontend",
-        },
-        {
-            title: "BudgetBuddy",
-            description:
-                "BudgetBuddy is a web-based app that helps users manage their personal finances easily. It allows users to track income and expenses, categorize transactions, and set monthly budgets. A dashboard provides clear financial summaries with visual graphs to monitor spending. With BudgetBuddy, users can stay on top of their finances and reach their financial goals more effectively.",
-            imageSrc: "/images/budgetbuddy.png",
-            tag: "Frontend",
-        },
-        {
-            title: "Spacify",
-            description:
-                "A platform to find and book spaces for work, meetings, and events.",
-            imageSrc: "/images/spacify.png",
-            tag: "UI/UX Design",
-        },
-    ];
     const skills = [
         { name: "Figma", icon: "/images/icon-figma.svg" },
         { name: "Adobe Illustrator", icon: "/images/icon-ai.svg" },

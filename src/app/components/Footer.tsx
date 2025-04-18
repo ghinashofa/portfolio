@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaGlobe } from "react-icons/fa";
 import Button from "./Button";
-import { useForm, ValidationError } from "@formspree/react";
 
 export default function Footer() {
     const marqueeRef = useRef<HTMLDivElement>(null);

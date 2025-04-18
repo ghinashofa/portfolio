@@ -6,10 +6,7 @@ import {
     AnimatePresence,
     useScroll,
     useTransform,
-    useMotionValue,
 } from "framer-motion";
-import { FaFigma, FaReact, FaBlender } from "react-icons/fa";
-import { SiFramer, SiGoogleplay } from "react-icons/si";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
