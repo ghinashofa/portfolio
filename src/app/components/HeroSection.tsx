@@ -109,10 +109,10 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 {/* MOBILE VERSION */}
-                <div className="md:hidden flex flex-col items-center text-center relative w-full mt-20">
+                <div className="md:hidden flex flex-col items-center text-center relative w-full mt-18">
                     {/* GHINA text behind image */}
                     <motion.h2
-                        className="font-alfa text-[48px] md:text-[90px] -top-10 md:-top-16 text-black absolute z-0 opacity-80"
+                        className="font-alfa text-[56px] md:text-[90px] -top-10 md:-top-16 text-black absolute z-0 opacity-80"
                         animate={{ y: [0, 20, 0] }}
                         transition={{
                             duration: 2,
@@ -192,7 +192,7 @@ const HeroSection: React.FC = () => {
                         transition={{ duration: 1, ease: "easeOut" }}
                         whileInView={{ opacity: 1, y: [20, 0] }}
                         viewport={{ once: false, amount: 0.2 }}
-                        className="mt-4 px-2 z-10"
+                        className="mt-4 px-2 mb-6 z-10"
                     >
                         <p className="text-lg font-semibold">
                             Hello! I&apos;m Ghina{" "}
