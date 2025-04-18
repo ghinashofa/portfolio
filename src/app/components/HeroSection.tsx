@@ -159,30 +159,18 @@ const HeroSection: React.FC = () => {
 
                     {/* Icons Animating */}
                     <div className="flex justify-center mt-4 space-x-4 z-10">
-                        <Image
-                            src="/images/icon-gmail.svg"
-                            alt="Gmail"
-                            width={40}
-                            height={40}
-                        />
-                        <Image
-                            src="/images/icon-linkedin.svg"
-                            alt="LinkedIn"
-                            width={40}
-                            height={40}
-                        />
-                        <Image
-                            src="/images/icon-github.svg"
-                            alt="GitHub"
-                            width={40}
-                            height={40}
-                        />
-                        <Image
-                            src="/images/icon-dribbble.svg"
-                            alt="Dribbble"
-                            width={40}
-                            height={40}
-                        />
+                        {socialLinks.map((link, index) => (
+                            <a
+                                key={index}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Social link ${index}`}
+                                className="w-10 h-10 flex items-center justify-center rounded-full border border-black text-black transition-all relative hover:bg-gradient-to-r from-[#B16CEA] via-[#F5607A] to-[#FFA74B] hover:border-none hover:shadow-md hover:text-white"
+                            >
+                                {link.icon}
+                            </a>
+                        ))}
                     </div>
 
                     {/* Deskripsi Animating */}
