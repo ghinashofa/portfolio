@@ -109,18 +109,27 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 {/* MOBILE VERSION */}
-                <div className="md:hidden flex flex-col items-center text-center relative w-full">
+                <div className="md:hidden flex flex-col items-center text-center relative w-full mt-20">
                     {/* GHINA text behind image */}
-                    <h2 className="font-alfa text-[90px] -top-16 text-black absolute z-0 opacity-80">
+                    <motion.h2
+                        className="font-alfa text-[48px] md:text-[90px] -top-10 md:-top-16 text-black absolute z-0 opacity-80"
+                        animate={{ y: [0, 20, 0] }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                        }}
+                    >
                         GHINA
-                    </h2>
+                    </motion.h2>
 
-                    {/* Foto Animating from Bottom */}
+                    {/* Foto Animating */}
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="relative z-10 w-[180px] h-auto"
+                        className="relative z-10 w-[180px] h-auto mt-5"
                         whileInView={{ opacity: 1, y: [50, 0] }}
                         viewport={{ once: false, amount: 0.2 }}
                     >
@@ -133,7 +142,7 @@ const HeroSection: React.FC = () => {
                         />
                     </motion.div>
 
-                    {/* Skill Animating from Left */}
+                    {/* Skill Animating */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -148,7 +157,7 @@ const HeroSection: React.FC = () => {
                         <p>Frontend Developer</p>
                     </motion.div>
 
-                    {/* Icons Animating from Right */}
+                    {/* Icons Animating */}
                     <div className="flex justify-center mt-4 space-x-4 z-10">
                         <Image
                             src="/images/icon-gmail.svg"
@@ -176,14 +185,14 @@ const HeroSection: React.FC = () => {
                         />
                     </div>
 
-                    {/* Deskripsi Animating from Top */}
+                    {/* Deskripsi Animating */}
                     <motion.div
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         whileInView={{ opacity: 1, y: [20, 0] }}
                         viewport={{ once: false, amount: 0.2 }}
-                        className="mt-6 px-2 z-10"
+                        className="mt-4 px-2 z-10"
                     >
                         <p className="text-lg font-semibold">
                             Hello! I&apos;m Ghina{" "}

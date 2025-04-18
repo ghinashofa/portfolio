@@ -693,8 +693,7 @@ export const projects: ProjectCategory = {
                 "A web-based application designed to help users efficiently manage their personal finances. BudgetBuddy allows users to track income, expenses, and create weekly/monthly budgets through an informative and user-friendly dashboard. This project was developed collaboratively during the Hacktiv8 Bootcamp",
             role: "In this project, I took on the dual role of Project Manager and Frontend Developer, with the following responsibilities:",
             image: "/images/budgetbuddy.png",
-            image1: "/images/dantal-dashboard.png",
-            tools: ["/images/icon-figma.svg", "/images/icon-ai.svg"],
+            tools: ["/images/icon-figma-2.svg", "/images/icon-react-2.svg", "/images/icon-tailwind-2.svg",],
             liveDemo: "https://budgetbuddys.netlify.app",
             highlights: [
                 {

@@ -119,6 +119,8 @@ export default function ProjectPages() {
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="rounded-xl w-full h-full object-cover shadow-md"
+                                                width={800}  
+                                                height={600}
                                             />
                                         </motion.div>
 
@@ -149,7 +151,8 @@ export default function ProjectPages() {
                                                             key={i}
                                                             src={icon}
                                                             alt={`tool-${i}`}
-                                                            className="w-10 h-10"
+                                                            width={10}
+                                                            height={10}
                                                         />
                                                     )
                                                 )}
