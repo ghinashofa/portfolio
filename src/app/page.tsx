@@ -30,6 +30,7 @@ export default function Home() {
     const skills = [
         { name: "Figma", icon: "/images/icon-figma.svg" },
         { name: "Adobe Illustrator", icon: "/images/icon-ai.svg" },
+        { name: "Adobe Photoshop", icon: "/images/icon-photoshop.svg" },
         { name: "Maze", icon: "/images/icon-maze.svg" },
         { name: "Whimsical", icon: "/images/icon-whimsical.svg" },
         { name: "Notion", icon: "/images/icon-notion.svg" },

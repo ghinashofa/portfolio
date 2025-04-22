@@ -514,7 +514,6 @@ export const projects: ProjectCategory = {
                 "The Mudik Asyik Bersama PLN 2025 website is a digital platform designed to simplify the registration process for PLN's free homecoming program during the Eid al-Fitr holiday. This application provides a more practical, fast, and organized ticket booking experience for participants, with a secure and integrated process from registration to ticket status checking.",
             role: "In this project, I took on the dual role of UI/UX Designer and Frontend Developer, with the fol`lowing responsibilities:",
             image: "/images/MUDIK-PLN.png",
-            // image1: "/images/dantal-dashboard.png",
             tools: ["/images/icon-notion-2.svg","/images/icon-figma-2.svg", "/images/icon-nextjs.svg","/images/icon-typescript-2.svg", "/images/icon-tailwind-2.svg", "/images/icon-motion-2.svg"],
             liveDemo: "https://live-demo-loan-dashboard.com",
             highlights: [
@@ -755,5 +754,22 @@ export const projects: ProjectCategory = {
             ],
         },
     ],
-    "Graphic Design": [],
+    "Graphic Design": [
+        {
+            slug: "buangdisini",
+            tag: "Graphic Design",
+            date: "July-September 2023",
+            title: "Visual Branding & Social Media Design for Buangdisini",
+            description:
+                "Visual assets designed for Buangdisini’s branding and digital communication, including social media content, posters, covers, and presentation layouts.",
+            projectDesc:
+                "A web-based application designed to help users efficiently manage their personal finances. BudgetBuddy allows users to track income, expenses, and create weekly/monthly budgets through an informative and user-friendly dashboard. This project was developed collaboratively during the Hacktiv8 Bootcamp",
+            role: "In this project, I took on the dual role of Project Manager and Frontend Developer, with the following responsibilities:",
+            image: "/images/buangdisini.png",
+            tools: ["/images/icon-ai-2.svg", "/images/icon-photoshop-2.svg", "/images/icon-figma-2.svg", "/images/icon-trello.png",],
+            liveDemo: "https://gaudy-gargoyle-734.notion.site/Graphic-Design-Portfolio-1d35f3f156db809281fbfe774425ca51?pvs=4",
+            externalLink:
+                "https://gaudy-gargoyle-734.notion.site/Graphic-Design-Portfolio-1d35f3f156db809281fbfe774425ca51?pvs=4",
+        },
+    ],
 };
